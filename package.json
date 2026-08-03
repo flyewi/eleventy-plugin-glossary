@@ -1,0 +1,23 @@
+{
+  "name": "eleventy-plugin-glossary",
+  "version": "0.1.0",
+  "description": "Eleventy plugin that adds a glossary shortcode/filter to auto-link and define terms in your content.",
+  "main": "lib/glossary.js",
+  "type": "commonjs",
+  "scripts": {
+    "test": "node --test test/*.test.js"
+  },
+  "keywords": [
+    "eleventy",
+    "eleventy-plugin",
+    "11ty",
+    "glossary"
+  ],
+  "license": "MIT",
+  "peerDependencies": {
+    "@11ty/eleventy": "^2.0.0 || ^3.0.0"
+  },
+  "files": [
+    "lib"
+  ]
+}
