@@ -5,7 +5,10 @@
   "main": "lib/glossary.js",
   "type": "commonjs",
   "scripts": {
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "demo:build": "cd demo && eleventy",
+    "demo:index": "cd demo && pagefind --site _site --output-path _site/pagefind-glossary",
+    "demo": "npm run demo:build && npm run demo:index"
   },
   "keywords": [
     "eleventy",
@@ -16,6 +19,10 @@
   "license": "MIT",
   "peerDependencies": {
     "@11ty/eleventy": "^2.0.0 || ^3.0.0"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "pagefind": "^1.5.2"
   },
   "files": [
     "lib"

@@ -1,0 +1,11 @@
+---
+lang: de
+permalink: "/glossar/{{ group.letter | lower }}/"
+---
+<h1>{{ title }}</h1>
+<p><a href="/glossar/">← Zur Glossar-Übersicht</a></p>
+<ul>
+{% for term in group.terms %}
+  <li><a href="{{ term.url }}">{{ term.data.title }}</a></li>
+{% endfor %}
+</ul>

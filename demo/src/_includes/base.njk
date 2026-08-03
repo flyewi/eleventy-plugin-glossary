@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="{{ lang or 'de' }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  {% if description %}<meta name="description" content="{{ description }}">{% endif %}
+  <style>{% include "glossary-tooltip.css" %}</style>
+</head>
+<body>
+  <article>
+    <h1>{{ title }}</h1>
+    {{ content | safe }}
+  </article>
+</body>
+</html>

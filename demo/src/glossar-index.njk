@@ -1,0 +1,24 @@
+---
+lang: de
+permalink: /glossar/
+title: Glossar
+---
+<h1>Glossar</h1>
+
+<link href="/pagefind-glossary/pagefind-ui.css" rel="stylesheet">
+<div id="glossary-search"></div>
+<script src="/pagefind-glossary/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    new PagefindUI({ element: "#glossary-search", showSubResults: true });
+  });
+</script>
+
+{% set groups = collections.glossaryTerms | glossaryByLocale(page.lang) | glossaryGroupByLetter %}
+
+<nav class="glossary-alphabet" aria-label="Alphabetische Navigation">
+  {% for group in groups %}
+    <a href="/glossar/{{ group.letter | lower }}/">{{ group.letter }}</a>
+  {% endfor %}
+</nav>
+

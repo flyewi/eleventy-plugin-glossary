@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="{{ lang }}">
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }} – Glossar</title>
+  <meta name="description" content="{{ description }}">
+  {% glossaryJsonLd title, description, synonyms, "https://example.com" + page.url %}
+  <style>{% include "glossary-tooltip.css" %}</style>
+</head>
+<body>
+  <article data-pagefind-body>
+    <h1>{{ title }}</h1>
+    {% if synonyms %}
+    <p class="glossary-synonyms">Auch bekannt als: {{ synonyms | join(", ") }}</p>
+    {% endif %}
+    {{ content | safe }}
+
+    {% set relatedTerms = related | glossaryRelated(collections.glossaryTerms) %}
+    {% if relatedTerms.length %}
+    <h2>Verwandte Begriffe</h2>
+    <ul class="glossary-related">
+      {% for term in relatedTerms %}
+        <li><a href="{{ term.url }}">{{ term.data.title }}</a></li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+  </article>
+</body>
+</html>
