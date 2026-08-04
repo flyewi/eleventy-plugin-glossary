@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(gh repo *)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://api.github.com/repos/flyewi/eleventy-plugin-indexnow)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://api.github.com/repos/flyewi/eleventy-plugin-redirects)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" https://api.github.com/repos/flyewi/eleventy-plugin-glossary)",
+      "Bash(git commit -q -m ' *)",
+      "Bash(WEBMENTION_IO_TOKEN=r1_DB7I7kYrtonUMjqAQHw INDEXNOW_ENABLED=false npx eleventy)",
+      "Bash(curl -s -w \"\\\\nHTTP_STATUS:%{http_code}\\\\n\" \"https://webmention.io/api/mentions.jf2?token=r1_DB7I7kYrtonUMjqAQHw&per-page=1\")"
+    ]
+  }
+}
