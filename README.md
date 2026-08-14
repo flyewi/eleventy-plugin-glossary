@@ -12,6 +12,8 @@ throughout your content. It supports two complementary ways of working:
 Both modes can be used together or independently, and everything works with plain Eleventy — no build
 step, no client-side JavaScript required for any of the core features.
 
+[![Buy me a coffee](https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png)](https://www.buymeacoffee.com/flyewiy)
+
 ## Features
 
 - `{% glossary %}` / `{% glossaryLink %}` shortcodes and a `glossaryDefinition` filter for a small,
